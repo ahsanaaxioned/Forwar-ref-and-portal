@@ -3,7 +3,9 @@ import RefComponents from './components/RefComponents';
 
 
 const App = () => {
-  <RefComponents />
+  return(
+    <RefComponents />
+  )
 }
 
 export default App;

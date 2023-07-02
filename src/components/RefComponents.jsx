@@ -2,22 +2,20 @@ import React, { Component } from 'react';
 import ForRefComp from './ForRefComp';
 
 export default class RefComponents extends Component {
-    constructor(){
-        super()
+    constructor(props) {
+        super(props)
         this.inputRef = React.createRef();
-        this.state = {test:'Hello Axioned '}
     }
-    eventhandler = ()=>{
-        this.setState({saying: this.inputRef.current.value})
-        
+    eventhandler = () => {
+        this.inputRef.current.focus();
+
     }
-  render() {
-    return (
-      <div>
-        <ForRefComp ref = {this.inputRef}/>
-        <button onClick={this.eventhandler()}>click On Me</button>
-        <p>{this.state.saying}</p>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <>
+                <ForRefComp ref={this.inputRef} />
+                <button onClick={this.eventhandler}>click On Me</button>
+            </>
+        )
+    }
 }
